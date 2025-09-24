@@ -1,16 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-theme-toggle',
   templateUrl: './theme-toggle.component.html',
   styleUrls: ['./theme-toggle.component.scss']
 })
-export class ThemeToggleComponent {
-  isDark = true; // Set default to dark
+export class ThemeToggleComponent implements OnInit {
+  isDark = true;
+
+  constructor() {
+    // Set dark mode by default if no theme is stored
+    const storedTheme = localStorage.getItem('portfolio-theme');
+    if (!storedTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('portfolio-theme', 'dark');
+    }
+  }
 
   ngOnInit() {
     // Initialize with the current theme state
-    this.isDark = document.documentElement.classList.contains('dark');
+    const storedTheme = localStorage.getItem('portfolio-theme');
+    this.isDark = storedTheme ? storedTheme === 'dark' : true;
+    document.documentElement.classList.toggle('dark', this.isDark);
   }
 
   toggleTheme() {
