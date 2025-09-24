@@ -1,0 +1,79 @@
+<footer class="bg-card border-t border-border">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Main Footer Content -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <!-- Brand Section -->
+        <div class="lg:col-span-2">
+          <h3 class="text-2xl font-bold gradient-text mb-4">Sarvesh Pandey</h3>
+          <p class="text-muted-foreground mb-6 max-w-md leading-relaxed">
+            Associate Software Engineer at Biz2X passionate about building scalable 
+            financial technology solutions and robust web applications.
+          </p>
+          
+          <!-- Social Links -->
+          <div class="flex space-x-4">
+            <a 
+              *ngFor="let social of socialLinks"
+              [href]="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" [attr.fill]="social.name === 'Email' ? 'none' : 'currentColor'" [attr.stroke]="social.name === 'Email' ? 'currentColor' : null">
+                <path [attr.d]="social.icon" [attr.stroke-linecap]="social.name === 'Email' ? 'round' : null" [attr.stroke-linejoin]="social.name === 'Email' ? 'round' : null" [attr.stroke-width]="social.name === 'Email' ? '2' : null"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-foreground mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li *ngFor="let link of quickLinks">
+              <button 
+                (click)="scrollToSection(link.section)"
+                class="text-muted-foreground hover:text-primary transition-colors text-sm">
+                {{ link.name }}
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-semibold text-foreground mb-4">Get In Touch</h4>
+          <div class="space-y-2 text-sm text-muted-foreground">
+            <p>sarvesh19dev&#64;gmail.com</p>
+            <p>+91-7266857353</p>
+            <p>India</p>
+          </div>
+          
+          <!-- Download Resume Button -->
+          <div class="mt-4">
+            <app-button 
+              variant="outline" 
+              size="sm"
+              (click)="downloadResume()"
+              class="w-full">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              Download Resume
+            </app-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-border">
+        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <p class="text-sm text-muted-foreground">
+            © {{ currentYear }} Sarvesh Pandey. All rights reserved.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

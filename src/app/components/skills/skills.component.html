@@ -1,0 +1,136 @@
+<section id="skills" class="py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Skills & Expertise</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        <p class="text-muted-foreground mt-4 max-w-2xl mx-auto">
+          A comprehensive overview of my technical skills and expertise across different domains
+        </p>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div 
+          *ngFor="let category of skillCategories" 
+          class="space-y-6">
+          <!-- Category Title -->
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">{{ category.title }}</h3>
+          </div>
+
+          <!-- Skills List -->
+          <div class="space-y-4">
+            <div 
+              *ngFor="let skill of category.skills" 
+              class="space-y-2">
+              <!-- Skill Header -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                  <span class="text-lg">{{ skill.icon }}</span>
+                  <span class="font-medium text-foreground">{{ skill.name }}</span>
+                </div>
+                <span class="text-sm text-muted-foreground">{{ skill.level }}%</span>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="w-full bg-muted rounded-full h-2">
+                <div 
+                  class="h-2 rounded-full transition-all duration-1000 ease-out"
+                  [class]="getSkillColor(skill.level)"
+                  [style.width.%]="skill.level">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Skills -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold text-center mb-8">Additional Skills</h3>
+        <div class="flex flex-wrap justify-center gap-3">
+          <app-badge 
+            *ngFor="let skill of ['Responsive Design', 'UI/UX Design', 'API Integration', 'Version Control', 'Testing', 'Performance Optimization', 'Cross-browser Compatibility', 'Mobile Development', 'DevOps', 'Cloud Computing']"
+            variant="secondary"
+            class="px-4 py-2">
+            {{ skill }}
+          </app-badge>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold text-center mb-8">Achievements</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Fractal Mentor Achievement -->
+          <div class="relative group">
+            <app-card class="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+              <div class="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <!-- Trophy Icon -->
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4m-7-9V5a1 1 0 011-1h12a1 1 0 011 1v7a5 5 0 01-10 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 8H3m16 0h2" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Fractal Mentor</h4>
+              <p class="text-sm text-muted-foreground">Mentor, Coding Club</p>
+              <div class="absolute inset-0 bg-background/95 rounded-lg shadow-lg p-4 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 flex flex-col justify-center items-center z-10">
+                <h4 class="font-semibold mb-2">Fractal Mentor</h4>
+                <ul class="text-sm text-left list-disc pl-4 space-y-1">
+                  <li><span class="font-bold">Mentor</span> in Coding Club, Fractal</li>
+                  <li>Guided <span class="font-bold">200+ juniors</span> in coding & development</li>
+                  <li>Organized and led programming sessions</li>
+                </ul>
+              </div>
+            </app-card>
+          </div>
+          <!-- Codeforces Achievement -->
+          <div class="relative group">
+            <app-card class="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+              <div class="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <!-- Medal Icon -->
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <circle cx="12" cy="14" r="4" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 4l4 6 4-6" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Codeforces Specialist</h4>
+              <p class="text-sm text-muted-foreground">1400+ rating, 100+ contests</p>
+              <div class="absolute inset-0 bg-background/95 rounded-lg shadow-lg p-4 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 flex flex-col justify-center items-center z-10">
+                <h4 class="font-semibold mb-2">Codeforces Specialist</h4>
+                <ul class="text-sm text-left list-disc pl-4 space-y-1">
+                  <li><span class="font-bold">Specialist</span> (1400+ rating)</li>
+                  <li><span class="font-bold">1400+</span> problems solved</li>
+                  <li>Participated in <span class="font-bold">100+</span> contests</li>
+                </ul>
+              </div>
+            </app-card>
+          </div>
+          <!-- Leetcode Achievement -->
+          <div class="relative group">
+            <app-card class="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+              <div class="w-16 h-16 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <!-- Knight/Badge Icon -->
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-6.5L2 10h7z" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Leetcode Knight</h4>
+              <p class="text-sm text-muted-foreground">2000+ rating, Top 2%</p>
+              <div class="absolute inset-0 bg-background/95 rounded-lg shadow-lg p-4 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 flex flex-col justify-center items-center z-10">
+                <h4 class="font-semibold mb-2">Leetcode Knight</h4>
+                <ul class="text-sm text-left list-disc pl-4 space-y-1">
+                  <li><span class="font-bold">2000+</span> rating</li>
+                  <li><span class="font-bold">Knight</span> batch</li>
+                  <li>Among <span class="font-bold">top 2%</span> globally</li>
+                </ul>
+              </div>
+            </app-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

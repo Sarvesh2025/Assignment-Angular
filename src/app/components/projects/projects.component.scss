@@ -1,0 +1,10 @@
+// Projects section styles are handled in the component template with Tailwind classes
+
+// Hide scrollbar utility for carousel
+.hide-scrollbar {
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE 10+ */
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome/Safari/Webkit */
+}

@@ -1,0 +1,20 @@
+# Assets Folder
+
+This folder should contain:
+- Profile photos
+- Project screenshots
+- Company logos
+- Resume PDF file
+- Any other images used in the portfolio
+
+## Recommended Images:
+- profile-photo.jpg (400x400px)
+- project-1.jpg (800x600px)
+- project-2.jpg (800x600px)
+- project-3.jpg (800x600px)
+- resume.pdf
+
+## Image Optimization:
+- Use WebP format for better compression
+- Optimize images before adding to the project
+- Consider using a CDN for production deployment

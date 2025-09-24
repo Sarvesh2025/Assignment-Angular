@@ -1,0 +1,25 @@
+// Skills section styles are handled in the component template with Tailwind classes
+
+// Achievements card hover overlay (for fallback or custom tweaks)
+.group:hover .group-hover\:opacity-100 {
+	opacity: 1 !important;
+	pointer-events: auto !important;
+}
+.group .group-hover\:opacity-100 {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.group .absolute {
+	transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+	.group .absolute {
+		position: static !important;
+		box-shadow: none !important;
+		opacity: 1 !important;
+		pointer-events: auto !important;
+		margin-top: 1rem;
+	}
+}

@@ -1,0 +1,11 @@
+<div 
+  *ngIf="isVisible"
+  class="fixed bottom-4 right-4 z-40 animate-slide-in">
+  <app-card class="p-3 shadow-lg">
+    <div class="flex items-center space-x-2">
+      <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+      <span class="text-sm font-medium text-muted-foreground">Visitors Today:</span>
+      <span class="text-sm font-bold text-primary">{{ visitorCount }}</span>
+    </div>
+  </app-card>
+</div>

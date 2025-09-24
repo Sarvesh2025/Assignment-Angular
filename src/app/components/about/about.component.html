@@ -1,0 +1,92 @@
+<section id="about" class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Content -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-semibold gradient-text">Associate Software Engineer</h3>
+          <p class="text-muted-foreground leading-relaxed">
+            I'm currently working as an Associate Software Engineer at Biz2X, developing 
+            scalable financial technology solutions. Currently pursuing B.Tech in Computer 
+            Science from IET with a GPA of 7.92, I have hands-on experience in full-stack 
+            development with expertise in MEAN Stack and comptetive programming.
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
+            I specialize in modern technologies including Angular, Node.js, Express.js, MongoDB, 
+            and AI/ML tools like TensorFlow and LangChain. As a mentor at Fractal coding club, 
+            I've guided 200+ students in comptetive programming and DSA. I've also achieved 
+            impressive ratings across multiple platforms: Codeforces Specialist (1460), 
+            LeetCode Knight (2100), and CodeChef 4-Star (1810).
+          </p>
+          
+          <!-- Key Points -->
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-foreground">MEAN Stack development (MongoDB, Express, Angular, Node.js)</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-foreground">Financial technology solutions at Biz2X</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-foreground">Competitive programming & algorithm expertise</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary rounded-full"></div>
+              <span class="text-foreground">Mentoring & knowledge sharing</span>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="pt-4">
+            <app-button 
+              (click)="scrollToSection('contact')"
+              class="w-full sm:w-auto">
+              Let's Work Together
+            </app-button>
+          </div>
+        </div>
+
+        <!-- Stats & Visual -->
+        <div class="space-y-8">
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-6">
+            <div 
+              *ngFor="let stat of stats" 
+              class="text-center p-6 rounded-lg bg-card border shadow-sm hover:shadow-md transition-shadow">
+              <div class="text-3xl font-bold text-primary mb-2">{{ stat.value }}</div>
+              <div class="text-sm text-muted-foreground">{{ stat.label }}</div>
+            </div>
+          </div>
+
+          <!-- Visual Element -->
+          <div class="relative">
+            <div class="w-full h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center transform transition-all duration-500 hover:scale-[1.02] hover:shadow-lg">
+              <div class="text-center space-y-4">
+                <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto flex items-center justify-center floating relative group">
+                  <!-- Animated rings -->
+                  <div class="absolute inset-0 rounded-full bg-primary/20 animate-ping"></div>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 animate-pulse"></div>
+                  <!-- Icon with rotation animation -->
+                  <svg class="w-10 h-10 text-white transform group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                  </svg>
+                </div>
+                <h4 class="font-semibold">Code & Design</h4>
+                <p class="text-sm text-muted-foreground">Creating beautiful experiences</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
